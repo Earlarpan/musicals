@@ -263,6 +263,55 @@ body {
   background: rgba(255,255,255,0.03);
 }
 
+.time-field {
+  border: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.time-field legend {
+  font-weight: 700;
+  color: #dff0ff;
+  margin-bottom: 12px;
+  padding: 0;
+  display: block;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.time-field input[type="radio"] {
+  display: none;
+}
+
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  color: #e8eefc;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.time-field input[type="radio"]:checked + .time-pill {
+  background: linear-gradient(135deg, #ffd851 0%, #f7b906 100%);
+  color: #071424;
+  border-color: rgba(255,214,41,0.9);
+  box-shadow: 0 8px 20px rgba(255,178,0,0.12);
+}
+
+.time-pill:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+}
+
 .enroll-card input:focus,
 .enroll-card select:focus,
 .enroll-card textarea:focus {

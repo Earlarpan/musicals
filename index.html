@@ -55,6 +55,16 @@
               Age
               <input type="number" name="entry.1435029649" min="3" max="120" placeholder="Your age" required />
             </label>
+            <fieldset class="time-field">
+              <legend>Preferred Time</legend>
+              <div class="time-row">
+                <input id="time-morning" type="radio" name="entry.1234567890" value="Morning" required />
+                <label for="time-morning" class="time-pill">🌅 Morning</label>
+
+                <input id="time-evening" type="radio" name="entry.1234567890" value="Evening" />
+                <label for="time-evening" class="time-pill">🌆 Evening</label>
+              </div>
+            </fieldset>
             <label>
               Phone Number
               <input type="tel" name="entry.503300453" placeholder="e.g. +1 555 555 5555" pattern="[0-9+()\-\s]{6,20}" required />
