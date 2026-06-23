@@ -58,11 +58,14 @@
             <fieldset class="time-field">
               <legend>Preferred Time</legend>
               <div class="time-row">
-                <input id="time-morning" type="radio" name="entry.1234567890" value="Morning" required />
-                <label for="time-morning" class="time-pill">🌅 Morning</label>
+                <div class="time-group">
+                  <input id="time-morning" type="radio" name="entry.1234567890" value="Morning" required />
+                  <label for="time-morning" class="time-pill">🌅 Morning</label>
 
-                <input id="time-evening" type="radio" name="entry.1234567890" value="Evening" />
-                <label for="time-evening" class="time-pill">🌆 Evening</label>
+                  <input id="time-evening" type="radio" name="entry.1234567890" value="Evening" />
+                  <label for="time-evening" class="time-pill">🌆 Evening</label>
+                </div>
+                <button id="clear-time" class="clear-instrument" type="button" aria-label="Clear time selection">Clear</button>
               </div>
             </fieldset>
             <label>
@@ -142,6 +145,16 @@
           const radios = document.querySelectorAll('input[name="entry.329660385"]');
           radios.forEach(r => (r.checked = false));
           const first = document.querySelector('#inst-guitar');
+          if (first) first.focus();
+        });
+      }
+
+      const clearTimeBtn = document.getElementById('clear-time');
+      if (clearTimeBtn) {
+        clearTimeBtn.addEventListener('click', () => {
+          const timeRadios = document.querySelectorAll('input[name="entry.1234567890"]');
+          timeRadios.forEach(r => (r.checked = false));
+          const first = document.querySelector('#time-morning');
           if (first) first.focus();
         });
       }
