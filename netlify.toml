@@ -1,0 +1,8 @@
+[build]
+  # Netlify will publish the repository root (static files are in project root)
+  publish = "."
+  # No build command required for plain static HTML/CSS/JS
+  command = ""
+
+[context.production.environment]
+  NODE_ENV = "production"

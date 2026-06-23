@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yadidya Musicals</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <span class="icon icon-guitar" aria-hidden="true"></span>
+          <span class="icon icon-keys" aria-hidden="true"></span>
+        </div>
+      </header>
+
+      <main class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">Yadidya Musicals</p>
+          <h1>We Equip Young Musicians</h1>
+          <button id="get-started-btn" class="hero-button" type="button">Get Started</button>
+        </div>
+        <div class="hero-decor"></div>
+      </main>
+
+      <section id="enroll-form" class="enroll-section hidden">
+        <div class="enroll-card">
+          <button id="close-enroll" class="close-enroll" type="button" aria-label="Close enrollment form">×</button>
+          <h2>Enroll Now</h2>
+          <p>Fill in your details and we’ll get you started with the right class.</p>
+          <form id="enroll-google-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc1JIPRn2VfnYkALKVW8c2BjcdX1-hy89bmmut7XDpkIKvAlw/formResponse" method="POST" target="hidden_iframe">
+            <label>
+              Full Name
+              <input type="text" name="entry.1427898032" placeholder="Your full name" required />
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="entry.804292100" placeholder="Your email" required />
+            </label>
+            <fieldset class="instrument-field">
+              <legend>Instrument</legend>
+              <div class="instrument-row">
+                <div class="instrument-group">
+                  <input id="inst-guitar" type="radio" name="entry.329660385" value="Guitar" required />
+                  <label for="inst-guitar" class="instrument-pill">🎸 Guitar</label>
+
+                  <input id="inst-keyboard" type="radio" name="entry.329660385" value="Keyboard" />
+                  <label for="inst-keyboard" class="instrument-pill">🎹 Keyboard</label>
+                </div>
+                <button id="clear-instrument" class="clear-instrument" type="button" aria-label="Clear instrument selection">Clear</button>
+              </div>
+            </fieldset>
+            <label>
+              Age
+              <input type="number" name="entry.1435029649" min="3" max="120" placeholder="Your age" required />
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="entry.503300453" placeholder="e.g. +1 555 555 5555" pattern="[0-9+()\-\s]{6,20}" required />
+            </label>
+            <button class="submit-button" type="submit">Send Enrollment Request</button>
+          </form>
+          <div id="submit-success" class="submit-success hidden">Thank you! Your enrollment request has been submitted.</div>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        </div>
+      </section>
+
+      <section id="courses" class="services-section">
+        <article class="service-card" role="button" tabindex="0" data-title="Guitar Lessons" data-desc="🎸 Discover Guitar Mastery from the First Note&lt;br&gt;&lt;strong&gt;Beginner Classes in Music Notation, Guitar Basics, Chords &amp; Melodies&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Unlock the language of music through essential notations, master guitar fundamentals, and play chords and melodies right away—no prior experience needed. Perfect for aspiring worship leaders, hobbyists, or anyone in Visakhapatnam ready to strum with confidence and passion.">
+          <div class="service-icon icon-guitar-card" aria-hidden="true"></div>
+          <h2>Guitar Lessons</h2>
+          <div class="card-body">
+            <p class="card-teaser">🎸 Discover Guitar Mastery from the First Note</p>
+            <p class="card-cta" role="link">Click here to know more</p>
+          </div>
+        </article>
+
+        <article class="service-card" role="button" tabindex="0" data-title="Keyboard Lessons" data-desc="🎹 Master the Keyboard from Day One&lt;br&gt;&lt;strong&gt;Beginner Classes in Music Theory, Keyboard Fundamentals, Chords &amp; Melodies&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Learn to read music notation, build a strong foundation in keyboard technique, and start playing beautiful chords and melodies from your very first lesson—absolutely no experience required. Ideal for aspiring worship musicians, creative enthusiasts, or anyone in Visakhapatnam eager to bring music to life through the keys.">
+          <div class="service-icon icon-keys-card" aria-hidden="true"></div>
+          <h2>Keyboard Lessons</h2>
+          <div class="card-body">
+            <p class="card-teaser">🎹 Master the Keyboard from Day One</p>
+            <p class="card-cta" role="link">Click here to know more</p>
+          </div>
+        </article>
+
+        <article class="service-card" role="button" tabindex="0" data-title="Details" data-desc="Online &amp; Offline :&lt;br&gt;Online In Zoom&lt;br&gt;Offline In Vishakapatnam&lt;br&gt;Location: Visakhapatnam, Andhra Pradesh 📍">
+          <div class="service-icon icon-group-card" aria-hidden="true"></div>
+          <h2>Details</h2>
+          <div class="card-body">
+            <p class="card-teaser">Online &amp; Offline :</p>
+            <p class="card-detail">Online In Zoom</p>
+            <p class="card-detail">Offline In Vishakapatnam</p>
+            <p class="card-location">Location: Visakhapatnam, Andhra Pradesh 📍</p>
+            <p><a class="card-offline" href="https://yadidyamusicals.com" target="_blank" rel="noopener noreferrer">yadidyamusicals.com</a></p>
+          </div>
+        </article>
+      </section>
+    </div>
+    <script>
+      const getStartedBtn = document.getElementById('get-started-btn');
+      const enrollForm = document.getElementById('enroll-form');
+      const coursesSection = document.getElementById('courses');
+
+      getStartedBtn.addEventListener('click', () => {
+        enrollForm.classList.remove('hidden');
+        enrollForm.scrollIntoView({ behavior: 'smooth' });
+        const firstInput = document.querySelector('#enroll-google-form input[name="entry.1427898032"]');
+        if (firstInput) firstInput.focus();
+      });
+
+      const clearInstrumentBtn = document.getElementById('clear-instrument');
+      if (clearInstrumentBtn) {
+        clearInstrumentBtn.addEventListener('click', () => {
+          const radios = document.querySelectorAll('input[name="entry.329660385"]');
+          radios.forEach(r => (r.checked = false));
+          const first = document.querySelector('#inst-guitar');
+          if (first) first.focus();
+        });
+      }
+
+      const closeEnrollBtn = document.getElementById('close-enroll');
+      if (closeEnrollBtn) {
+        closeEnrollBtn.addEventListener('click', () => {
+          enrollForm.classList.add('hidden');
+          getStartedBtn.focus();
+        });
+      }
+
+      const form = document.querySelector('#enroll-google-form');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const successMessage = document.getElementById('submit-success');
+      const hiddenIframe = document.getElementById('hidden_iframe');
+
+      form.addEventListener('submit', (event) => {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        successMessage.classList.add('hidden');
+      });
+
+      hiddenIframe.addEventListener('load', () => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Enrollment Request';
+        form.reset();
+        successMessage.classList.remove('hidden');
+      });
+
+      // Service card modal
+      const modal = document.createElement('div');
+      modal.id = 'service-modal';
+      modal.className = 'modal hidden';
+      modal.innerHTML = `
+        <div class="modal-overlay"></div>
+        <div class="modal-content" role="dialog" aria-modal="true">
+          <button class="modal-close" aria-label="Close">×</button>
+          <h3 class="modal-title"></h3>
+          <p class="modal-desc"></p>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const modalTitle = modal.querySelector('.modal-title');
+      const modalDesc = modal.querySelector('.modal-desc');
+      const modalClose = modal.querySelector('.modal-close');
+      const modalOverlay = modal.querySelector('.modal-overlay');
+
+      function openModal(title, desc) {
+        modalTitle.textContent = title;
+        modalDesc.innerHTML = desc;
+        modal.classList.remove('hidden');
+        modal.querySelector('.modal-content').focus();
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        getStartedBtn.focus();
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', () => {
+          openModal(card.dataset.title, card.dataset.desc);
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(card.dataset.title, card.dataset.desc);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
