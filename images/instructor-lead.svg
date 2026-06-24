@@ -1,0 +1,7 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="500" rx="24" fill="#122c58"/>
+  <circle cx="200" cy="180" r="110" fill="#ffd051"/>
+  <rect x="100" y="280" width="200" height="140" rx="24" fill="#1f4f94"/>
+  <path d="M120 420c24-70 144-70 168 0" fill="#ffd051"/>
+  <text x="200" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">Lead Instructor</text>
+</svg>
